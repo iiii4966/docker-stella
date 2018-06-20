@@ -22,7 +22,7 @@ RUN apt-get install -y build-essential git
 RUN apt-get install -y python python-dev python-setuptools
 
 # install mysql_config
-RUN apt-get install -y libmysqlclient-dev
+RUN apt-get install -y default-libmysqlclient-dev
 
 # install supervisor
 RUN apt-get install -y supervisor
