@@ -34,9 +34,10 @@ RUN pip3 install uwsgi
 # install phantomJS
 RUN apt-get -y install build-essential chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
 RUN wget -q https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-i686.tar.bz2 -O phantomjs-2.1.1-linux-i686.tar.bz2
-RUN tar xvjf phantomjs-2.1.1-linux-i686.tar.bz2
 
-RUN mv -f phantomjs-2.1.1-linux-i686 /usr/local/share/
+RUN mv -f phantomjs-2.1.1-linux-i686.tar.bz2 /usr/local/share/
+RUN cd /usr/local/share/
+RUN tar xvjf phantomjs-2.1.1-linux-i686.tar.bz2
 RUN ln -sf /usr/local/share/phantomjs-2.1.1-linux-i686/bin/phantomjs /usr/local/share/phantomjs
 RUN ln -sf /usr/local/share/phantomjs-2.1.1-linux-i686/bin/phantomjs /usr/local/bin/phantomjs
 RUN ln -sf /usr/local/share/phantomjs-2.1.1-linux-i686/bin/phantomjs /usr/bin/phantomjs
